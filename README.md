@@ -1,5 +1,5 @@
 # Weather-App
-[screenshot]
+![Weather App Screenshot](https://github.com/csrzepka/node3-weather-website/blob/master/screenshots/New-Home.PNG)
 To view a live version of this application, you can check out the deployment on [Heroku](https://csrzepka-weather-application.herokuapp.com/).
 
 ## About the Application
