@@ -3,9 +3,9 @@ const express = require('express');
 const hbs = require('hbs');
 const geocode = require('./utils/geocode');
 const forecast = require('./utils/forecast');
+const { port } = require('./env');
 
 const app = express();
-const port = process.env.PORT || 3000;
 
 // Define paths for Express config
 const publicDirectoryPath = path.join(__dirname, '../public');
@@ -23,21 +23,18 @@ app.use(express.static(publicDirectoryPath));
 app.get('', (req, res) => {
     res.render('index', {
         title: 'Weather',
-        name: 'Chris Rzepka'
     });
 });
 
 app.get('/about', (req, res) => {
     res.render('about', {
         title: 'About Me',
-        name: 'Chris Rzepka'
     });
 });
 
 app.get('/help', (req, res) => {
     res.render('help', {
         title: 'Help',
-        name: 'Chris Rzepka',
         helpText: 'This is some helpful text.'
     });
 });
@@ -62,29 +59,14 @@ app.get('/weather', (req, res) => {
             res.send({
                 forecast: forecastData,
                 location,
-                address: req.query.address
             });
         });
-    });
-});
-
-app.get('/products', (req, res) => {
-    if (!req.query.search) {
-        return res.send({
-            error: 'You must provide a search term'
-        });
-    }
-    
-    console.log(req.query);
-    res.send({
-        products: []
     });
 });
 
 app.get('/help/*', (req, res) => {
     res.render('404', {
         title: 'Help 404',
-        name: 'Chris Rzepka',
         errorMessage: 'Help article not found.'
     });
 });
@@ -92,7 +74,6 @@ app.get('/help/*', (req, res) => {
 app.get('*', (req, res) => {
     res.render('404', {
         title: '404',
-        name: 'Chris Rzepka',
         errorMessage: 'Page not found.'
     });
 });

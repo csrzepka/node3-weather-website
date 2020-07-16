@@ -8,10 +8,40 @@
     <link rel="stylesheet" href="/css/styles.css">
 </head>
 
-<body>
-    <div class="main-content">
-        {{>header}}
-        <img class="portrait" src="/img/robot.png">
+<body class="bgimg">
+    {{>navbar}}
+
+    <div class="about-page">
+        <h1>About the Application</h1>
+        <p>
+            The foundation of this project was built alongside the udemy course <a
+                href="https://www.udemy.com/course/the-complete-nodejs-developer-course-2/"> The Complete Node.js
+                Developer Course (3rd Edition)</a>.
+        </p>
+        <p>
+            This Weather App Project was made to demonstrate Asynchronous Node.js, Web Servers, API Calls, and
+            Application Deployment. To learn more about this be sure to check out this course.
+        </p>
+        <div class="about-logos">
+            <a href="https://weatherstack.com/"><img src="/img/weatherstack_logo.png" alt="Weather Stack API Logo"></a>
+            <a href="https://www.mapbox.com/"><img src="/img/mapbox-logo.svg" alt="Map Box API Logo"></a>
+        </div>
+        <p>
+            The original version of the application was built using the <a
+                href="https://weatherstack.com/">WeatherStackAPI</a>, the <a
+                href="https://www.mapbox.com/">MapBoxAPI</a>, and <a href="https://handlebarsjs.com/">Handlebars.js</a>,
+            with minimal HTML structure and CSS styling. To add more information and improve the information available
+            on the website, I changed the website to run off of the <a
+                href="https://openweathermap.org/">OpenWeatherAPI</a>, using their free new One Call API as they provide
+            a lot more weather information on their free tier.
+        </p>
+        <div class="about-logos">
+            <a href="https://openweathermap.org/"><img src="/img/openweather-logo.png" alt="Open Weather API Logo"></a>
+        </div>
+        <p>
+            To see more of how I modified this project compared to the original, check out the my <a
+                href="https://github.com/csrzepka/node3-weather-website">GitHub Repository</a>.
+        </p>
     </div>
 
     {{>footer}}

@@ -3,25 +3,33 @@
 <html>
 
 <head>
+    <meta charset="utf-8">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
     <title>Weather</title>
     <link rel="icon" href="/img/weather.png">
     <link rel="stylesheet" href="/css/styles.css">
 </head>
 
-<body>
-    <div class="main-content">
-        {{>header}}
+<body class="bgimg">
+    {{>navbar}}
 
-        <p>Use this site to get your weather!</p>
-
-        <form>
+    <div class="container">
+        <form class="search-bar">
+            <p>Use this site to get your weather!</p>
             <input placeholder="Location">
-            <button>Search</button>            
+            <button>Search</button>
         </form>
 
-        <p id="message-1"></p>
-        <p id="message-2"></p>
+        <h4 id="message-1">Enter a location to start</h4>
+
+        {{>current}}
     </div>
+
+    {{>hourly}}
+
+    {{>daily}}
 
     {{>footer}}
 
